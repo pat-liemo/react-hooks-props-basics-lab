@@ -1,12 +1,17 @@
 import React from "react";
+import Links from "./Links";
+import user from "../data/user";
 
-function About() {
+function About(props) {
+  const passedBio = props.bio
+
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>Put the bio in here</p>
+      {passedBio ? <p>{props.bio}</p> : ""}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
       {/* add your <Links /> component here */}
+      <Links gitLink = {user.links.github} linkLink = {user.links.linkedin}/>
     </div>
   );
 }
